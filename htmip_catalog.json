@@ -1,0 +1,64 @@
+{
+  "esmcat_version": "0.0.1",
+  "attributes": [
+    {
+      "column_name": "source",
+      "vocabulary": ""
+    },
+    {
+      "column_name": "temporal",
+      "vocabulary": ""
+    },
+    {
+      "column_name": "variable",
+      "vocabulary": ""
+    },
+    {
+      "column_name": "ens",
+      "vocabulary": ""
+    },
+    {
+      "column_name": "simulation",
+      "vocabulary": ""
+    },
+    {
+      "column_name": "experiment",
+      "vocabulary": ""
+    },
+    {
+      "column_name": "path",
+      "vocabulary": ""
+    }
+  ],
+  "assets": {
+    "column_name": "path",
+    "format": "netcdf",
+    "format_column_name": null
+  },
+  "aggregation_control": {
+    "variable_column_name": "variable",
+    "groupby_attrs": [
+      "source",
+      "temporal",
+      "simulation",
+      "ens",
+      "experiment"
+    ],
+    "aggregations": [
+      {
+        "type": "join_new",
+        "attribute_name": "ens",
+        "options": {
+          "dim": "time",
+          "coords": "minimal",
+          "compat": "override"
+        }
+      }
+    ]
+  },
+  "id": "htmip_catalog",
+  "description": null,
+  "title": null,
+  "last_updated": "2024-03-27T12:07:31Z",
+  "catalog_file": "file:///home/users/akuchar/htmip_catalog.csv"
+}
